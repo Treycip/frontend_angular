@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="container" *ngIf="isLoggedIn">
+  <h1>Lista de Usuarios</h1>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Nombre de Usuario</th>
+        <th>Correo Electrónico</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of listUsuario">
+        <td>{{ usuario.username }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="usuario._id && eliminarUsuario(usuario._id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 style="color: red;" *ngIf="!isLoggedIn">Es necesario iniciar sesion para tener acceso!!</h2>

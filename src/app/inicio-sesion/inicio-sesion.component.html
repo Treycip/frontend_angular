@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="container">
+    <h3>Login</h3>
+    <form (ngSubmit)="iniciarSesion()" class="mt-4">
+        <div class="form-group">
+            <input type="email" [(ngModel)]="credenciales.email" name="email" placeholder="Correo electrónico" required class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="password" [(ngModel)]="credenciales.password" name="password" placeholder="Contraseña" required class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+        <hr>
+    <asl-google-signin-button *ngIf="!user"></asl-google-signin-button>
+    </form>
+    <hr class="my-4">
+    <button [routerLink]="['/registro']" class="btn btn-secondary mt-4">Crear cuenta</button>
+
+</div>
